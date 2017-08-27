@@ -42,8 +42,9 @@ class REST {
                     var items: [Brand] = []
                     for item in json {
                         
+                        let id = item["id"] as! Int
                         let name = item["fipe_name"] as! String
-                        let item = Brand(name: name)
+                        let item = Brand(name: name, id: id)
                         items.append(item)
                     }
                     

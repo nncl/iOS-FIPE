@@ -7,7 +7,7 @@ class VeiculosTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(brand.name);
+        print(brand.id);
     }
 
 }
