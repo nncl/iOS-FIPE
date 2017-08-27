@@ -15,6 +15,12 @@ class PriceViewController: UIViewController {
     var carModel: CarModel!
     var brand: Brand!
     var price: Price!
+    
+    
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var lblFuelType: UILabel!
+    @IBOutlet weak var lblYear: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +35,12 @@ class PriceViewController: UIViewController {
     func loadPrice(modelId: String, carId: String, brandId: Int) {
         REST.loadPrice(modelId: modelId, carId: carId, brandId: brandId) { (item: Price?) in
             
-            
-            
+            DispatchQueue.main.async {
+                self.lblName.text = item?.name
+                self.lblPrice.text = item?.price
+                self.lblFuelType.text = item?.fuelType
+                self.lblYear.text = item?.year
+            }
         }
     }
 
