@@ -133,4 +133,44 @@ class REST {
             }
             }.resume()
     }
+    
+    static func loadPrice(modelId: String, carId: String, brandId: Int, onComplete: @escaping (Price?) -> Void) {
+        guard let url = URL(string: "\(basePath)/carros/veiculo/\(brandId)/\(carId)/\(modelId).json") else {
+            onComplete(nil)
+            return
+        }
+        
+        session.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                onComplete(nil)
+            } else {
+                guard let response = response as? HTTPURLResponse else {
+                    onComplete(nil)
+                    return
+                }
+                
+                if response.statusCode == 200 {
+                    guard let data = data else {
+                        onComplete(nil)
+                        return
+                    }
+                    
+                    
+                    let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) as! [String: Any]
+                    
+                    let id = json["id"] as! String
+                    let name = json["name"] as! String
+                    let price = json["preco"] as! String
+                    let fuelType = json["combustivel"] as! String
+                    let year = json["ano_modelo"] as! String
+                    
+                    let item = Price(name: name, id: id, price: price, fuelType: fuelType, year: year)
+                    
+                    onComplete(item)
+                } else {
+                    onComplete(nil)
+                }
+            }
+            }.resume()
+    }
 }
