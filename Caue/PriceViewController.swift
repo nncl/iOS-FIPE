@@ -37,9 +37,9 @@ class PriceViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.lblName.text = item?.name
-                self.lblPrice.text = item?.price
-                self.lblFuelType.text = item?.fuelType
-                self.lblYear.text = item?.year
+                self.lblPrice.text = "Preço: \(item!.price)"
+                self.lblFuelType.text = "Tipo de Combustível: \(item!.fuelType)"
+                self.lblYear.text = "Ano Modelo: \(item!.year)"
             }
         }
     }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -129,36 +130,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXI-6W-dg7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXI-6W-dg7">
                                 <rect key="frame" x="16" y="72" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="htU-rj-Rll"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj1-c8-sYE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vj1-c8-sYE">
                                 <rect key="frame" x="16" y="101" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="mjZ-5z-N2E"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo de Combustível" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOG-Kg-2ya">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de Combustível" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOG-Kg-2ya">
                                 <rect key="frame" x="16" y="130" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="WuW-jn-6a0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ano Modelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UX-bb-gqK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ano Modelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UX-bb-gqK">
                                 <rect key="frame" x="16" y="159" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="xsW-Go-iUg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iXI-6W-dg7" firstAttribute="top" secondItem="yTb-fQ-x9O" secondAttribute="bottom" constant="8" id="19X-hZ-HuP"/>
+                            <constraint firstItem="JOG-Kg-2ya" firstAttribute="trailing" secondItem="Rmz-Ur-u8v" secondAttribute="trailingMargin" id="1hI-Z9-7Bq"/>
+                            <constraint firstItem="JOG-Kg-2ya" firstAttribute="leading" secondItem="Rmz-Ur-u8v" secondAttribute="leadingMargin" id="IQb-HG-QMu"/>
+                            <constraint firstItem="iXI-6W-dg7" firstAttribute="leading" secondItem="Rmz-Ur-u8v" secondAttribute="leadingMargin" id="OdD-bw-ol5"/>
+                            <constraint firstItem="6UX-bb-gqK" firstAttribute="leading" secondItem="Rmz-Ur-u8v" secondAttribute="leadingMargin" id="Q0F-Lj-GXU"/>
+                            <constraint firstItem="6UX-bb-gqK" firstAttribute="top" secondItem="JOG-Kg-2ya" secondAttribute="bottom" constant="8" id="WOk-e7-Zw4"/>
+                            <constraint firstItem="vj1-c8-sYE" firstAttribute="top" secondItem="iXI-6W-dg7" secondAttribute="bottom" constant="8" id="coB-Uz-nKc"/>
+                            <constraint firstItem="6UX-bb-gqK" firstAttribute="trailing" secondItem="Rmz-Ur-u8v" secondAttribute="trailingMargin" id="e3k-uA-yBe"/>
+                            <constraint firstItem="iXI-6W-dg7" firstAttribute="trailing" secondItem="Rmz-Ur-u8v" secondAttribute="trailingMargin" id="gQR-r9-L8K"/>
+                            <constraint firstItem="JOG-Kg-2ya" firstAttribute="top" secondItem="vj1-c8-sYE" secondAttribute="bottom" constant="8" id="i0U-jo-Je8"/>
+                            <constraint firstItem="vj1-c8-sYE" firstAttribute="trailing" secondItem="Rmz-Ur-u8v" secondAttribute="trailingMargin" id="pTm-TR-sc1"/>
+                            <constraint firstItem="vj1-c8-sYE" firstAttribute="leading" secondItem="Rmz-Ur-u8v" secondAttribute="leadingMargin" id="sou-0u-Fmo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Modelo" id="YKL-FY-40M">
                         <barButtonItem key="backBarButtonItem" title=" " id="116-PF-ain"/>
