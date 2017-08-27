@@ -1,6 +1,6 @@
 import Foundation
 
-class Car {
+class CarModel {
     var id: String
     var name: String
     

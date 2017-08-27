@@ -1,22 +1,22 @@
 import UIKit
 
-class VeiculosTableViewController: UITableViewController {
+class ModelsTableViewController: UITableViewController {
     
-    var dataSource: [Car] = []
+    var dataSource: [CarModel] = []
     var brand: Brand!
-    
+    var car: Car!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Atualiza o título da página
-        navigationItem.title = brand.name
+        navigationItem.title = car.name
         
-        // Carrega os carros da marca selecionada
-        loadItems(brandId: brand.id)
+        loadItems(carId: car.id, brandId: brand.id)
     }
     
-    func loadItems(brandId: Int) {
-        REST.loadCars(brandId: brandId) { (items: [Car]?) in
+    func loadItems(carId: String, brandId: Int) {
+        REST.loadModels(carId: carId, brandId: brandId) { (items: [CarModel]?) in
             if let items = items {
                 self.dataSource = items
                 
@@ -26,7 +26,7 @@ class VeiculosTableViewController: UITableViewController {
             }
         }
     }
-    
+
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
@@ -39,16 +39,6 @@ class VeiculosTableViewController: UITableViewController {
         cell.textLabel?.text = item.name
         
         return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier! == "vehicles_models" {
-            let vc = segue.destination as! ModelsTableViewController
-            
-            vc.car = dataSource[tableView.indexPathForSelectedRow!.row]
-            
-            vc.brand = brand
-        }
     }
 
 }

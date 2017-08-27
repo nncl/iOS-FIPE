@@ -81,9 +81,48 @@ class REST {
                     
                     var items: [Car] = []
                     for item in json {
-                        
+                        let id = item["id"] as! String
                         let name = item["fipe_name"] as! String
-                        let item = Car(name: name)
+                        let item = Car(name: name, id: id)
+                        items.append(item)
+                    }
+                    
+                    onComplete(items)
+                } else {
+                    onComplete(nil)
+                }
+            }
+            }.resume()
+    }
+    
+    static func loadModels(carId: String, brandId: Int, onComplete: @escaping ([CarModel]?) -> Void) {
+        guard let url = URL(string: "\(basePath)/carros/veiculo/\(brandId)/\(carId).json") else {
+            onComplete(nil)
+            return
+        }
+        
+        session.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                onComplete(nil)
+            } else {
+                guard let response = response as? HTTPURLResponse else {
+                    onComplete(nil)
+                    return
+                }
+                
+                if response.statusCode == 200 {
+                    guard let data = data else {
+                        onComplete(nil)
+                        return
+                    }
+                    
+                    let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) as! [[String: Any]]
+                    
+                    var items: [CarModel] = []
+                    for item in json {
+                        let id = item["id"] as! String
+                        let name = item["name"] as! String
+                        let item = CarModel(name: name, id: id)
                         items.append(item)
                     }
                     
