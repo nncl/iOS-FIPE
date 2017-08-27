@@ -2,24 +2,21 @@ import UIKit
 
 class VeiculosTableViewController: UITableViewController {
     
-    var dataSource: [Brand] = []
+    var dataSource: [Car] = []
     var brand: Brand!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Atualiza o título da página
-        
         navigationItem.title = brand.name
         
-        // loadItems(brandId: brand.id)
+        // Carrega os carros da marca selecionada
+        loadItems(brandId: brand.id)
     }
     
     func loadItems(brandId: Int) {
-        
-        print("brandId: \(brandId)")
-        
-        REST.loadBrands { (items: [Brand]?) in
+        REST.loadCars(brandId: brandId) { (items: [Car]?) in
             if let items = items {
                 self.dataSource = items
                 

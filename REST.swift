@@ -82,7 +82,7 @@ class REST {
                     var items: [Car] = []
                     for item in json {
                         
-                        let name = item["name"] as! String
+                        let name = item["fipe_name"] as! String
                         let item = Car(name: name)
                         items.append(item)
                     }
