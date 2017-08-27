@@ -1,11 +1,3 @@
-//
-//  PriceViewController.swift
-//  Caue
-//
-//  Created by Cauê Almeida on 8/27/17.
-//  Copyright © 2017 Cauê Almeida. All rights reserved.
-//
-
 import UIKit
 
 class PriceViewController: UIViewController {
@@ -15,7 +7,6 @@ class PriceViewController: UIViewController {
     var carModel: CarModel!
     var brand: Brand!
     var price: Price!
-    
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
@@ -36,7 +27,7 @@ class PriceViewController: UIViewController {
         REST.loadPrice(modelId: modelId, carId: carId, brandId: brandId) { (item: Price?) in
             
             DispatchQueue.main.async {
-                self.lblName.text = item?.name
+                self.lblName.text = item!.name
                 self.lblPrice.text = "Preço: \(item!.price)"
                 self.lblFuelType.text = "Tipo de Combustível: \(item!.fuelType)"
                 self.lblYear.text = "Ano Modelo: \(item!.year)"
