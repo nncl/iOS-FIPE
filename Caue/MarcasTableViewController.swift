@@ -30,9 +30,7 @@ class MarcasTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return dataSource.count
     }
     
@@ -43,6 +41,13 @@ class MarcasTableViewController: UITableViewController {
         cell.textLabel?.text = item.name
         
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == "vehicles" {
+            let vc = segue.destination as! VeiculosTableViewController
+            vc.brand = dataSource[tableView.indexPathForSelectedRow!.row]
+        }
     }
 
 }

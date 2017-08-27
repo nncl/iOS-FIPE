@@ -15,6 +15,7 @@
 		0D40D6111F53185B00420BBB /* MarcasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40D6101F53185B00420BBB /* MarcasTableViewController.swift */; };
 		0D40D6131F5318D100420BBB /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40D6121F5318D100420BBB /* Brand.swift */; };
 		0D40D6151F53192800420BBB /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40D6141F53192800420BBB /* REST.swift */; };
+		0D40D6171F531FE600420BBB /* VeiculosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D40D6161F531FE600420BBB /* VeiculosTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0D40D6101F53185B00420BBB /* MarcasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcasTableViewController.swift; sourceTree = "<group>"; };
 		0D40D6121F5318D100420BBB /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		0D40D6141F53192800420BBB /* REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = REST.swift; path = ../REST.swift; sourceTree = "<group>"; };
+		0D40D6161F531FE600420BBB /* VeiculosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeiculosTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				0D40D5FE1F53127200420BBB /* AppDelegate.swift */,
 				0D40D6001F53127200420BBB /* ViewController.swift */,
 				0D40D6021F53127200420BBB /* Main.storyboard */,
+				0D40D6161F531FE600420BBB /* VeiculosTableViewController.swift */,
 				0D40D6051F53127200420BBB /* Assets.xcassets */,
 				0D40D6071F53127200420BBB /* LaunchScreen.storyboard */,
 				0D40D60A1F53127200420BBB /* Info.plist */,
@@ -151,6 +154,7 @@
 				0D40D5FF1F53127200420BBB /* AppDelegate.swift in Sources */,
 				0D40D6151F53192800420BBB /* REST.swift in Sources */,
 				0D40D6111F53185B00420BBB /* MarcasTableViewController.swift in Sources */,
+				0D40D6171F531FE600420BBB /* VeiculosTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
