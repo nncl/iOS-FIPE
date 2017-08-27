@@ -18,7 +18,7 @@ class MarcasTableViewController: UITableViewController {
     }
     
     func loadItems() {
-        REST.loadItems { (items: [Brand]?) in
+        REST.loadBrands { (items: [Brand]?) in
             if let items = items {
                 self.dataSource = items
                 

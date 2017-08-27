@@ -16,7 +16,7 @@ class REST {
     
     static let session = URLSession(configuration: configuration)
     
-    static func loadItems(onComplete: @escaping ([Brand]?) -> Void) {
+    static func loadBrands(onComplete: @escaping ([Brand]?) -> Void) {
         guard let url = URL(string: "\(basePath)/carros/marcas.json") else {
             onComplete(nil)
             return
@@ -45,6 +45,45 @@ class REST {
                         let id = item["id"] as! Int
                         let name = item["fipe_name"] as! String
                         let item = Brand(name: name, id: id)
+                        items.append(item)
+                    }
+                    
+                    onComplete(items)
+                } else {
+                    onComplete(nil)
+                }
+            }
+            }.resume()
+    }
+    
+    static func loadCars(brandId: Int, onComplete: @escaping ([Car]?) -> Void) {
+        guard let url = URL(string: "\(basePath)/carros/veiculos/\(brandId).json") else {
+            onComplete(nil)
+            return
+        }
+        
+        session.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                onComplete(nil)
+            } else {
+                guard let response = response as? HTTPURLResponse else {
+                    onComplete(nil)
+                    return
+                }
+                
+                if response.statusCode == 200 {
+                    guard let data = data else {
+                        onComplete(nil)
+                        return
+                    }
+                    
+                    let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) as! [[String: Any]]
+                    
+                    var items: [Car] = []
+                    for item in json {
+                        
+                        let name = item["name"] as! String
+                        let item = Car(name: name)
                         items.append(item)
                     }
                     
