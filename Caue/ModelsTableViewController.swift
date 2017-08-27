@@ -40,5 +40,16 @@ class ModelsTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == "details" {
+            let vc = segue.destination as! PriceViewController
+            
+            vc.carModel = dataSource[tableView.indexPathForSelectedRow!.row]
+            
+            vc.car = car
+            vc.brand = brand
+        }
+    }
 
 }

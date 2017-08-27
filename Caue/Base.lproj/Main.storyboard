@@ -102,6 +102,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3ls-yy-PVT" kind="show" identifier="details" id="RVt-iT-GkE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -113,6 +116,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqr-AS-bPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2998" y="112"/>
+        </scene>
+        <!--Modelo-->
+        <scene sceneID="ral-0s-nLQ">
+            <objects>
+                <viewController id="3ls-yy-PVT" customClass="PriceViewController" customModule="Caue" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yTb-fQ-x9O"/>
+                        <viewControllerLayoutGuide type="bottom" id="RrA-Pm-LtQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rmz-Ur-u8v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Modelo" id="YKL-FY-40M">
+                        <barButtonItem key="backBarButtonItem" title=" " id="116-PF-ain"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bja-mW-aWI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3774" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6IG-CB-jew">
